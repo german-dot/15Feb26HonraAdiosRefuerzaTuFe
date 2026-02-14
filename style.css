@@ -112,6 +112,8 @@ body {
 
 
 /* Header */
+
+/* Header - Mantén lo que ya tienes del header y section */
 .axsetflot > header {
     position: sticky;
     top: 0;
@@ -135,27 +137,44 @@ body {
     height: auto;
 }
 
+/* === MENÚ NAV MEJORADO: botones redondeados con espacios === */
 .axsetflot > header > nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    background: var(--colpri);
+    background: transparent;                /* quitamos fondo del nav entero */
+    padding: 15px 10px;                     /* espacio arriba/abajo */
+    text-align: center;                     /* centra todo */
 }
 
 .axsetflot > header > nav > a {
-    padding: 14px 10px;
-    font-size: 1.05rem;
-    color: var(--colsec);
+    display: inline-block;                  /* clave: permite márgenes laterales */
+    margin: 6px 8px;                        /* espacio entre botones (ajusta si quieres más) */
+    padding: 12px 24px;                     /* tamaño interno cómodo */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: var(--colpri);              /* color principal (morado/violeta) */
     text-decoration: none;
-    text-align: center;
-    transition: all 0.3s;
+    border-radius: 50px;                    /* muy redondeado (píldora) */
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* sombra sutil */
 }
 
-.axsetflot > header > nav > a:hover {
-    background: var(--colsec);
-    color: var(--colpri);
+.axsetflot > header > nav > a:hover,
+.axsetflot > header > nav > a:focus {
+    background: var(--colsec1);             /* oscuro al hover (o usa un tono más oscuro de --colpri) */
+    color: var(--colsec);
+    transform: translateY(-3px);            /* efecto "levita" */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
+
+/* Para la página actual (opcional pero recomendado) */
+.axsetflot > header > nav > a.active {
+    background: #4c1d95;                    /* un morado más oscuro, o ajusta */
+    box-shadow: 0 4px 12px rgba(76,29,149,0.4);
+}
+
+
+
+
 
 /* Footer */
 .axfotbasic {
